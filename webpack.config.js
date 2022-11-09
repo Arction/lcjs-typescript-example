@@ -6,6 +6,7 @@ const isProduction = process.env.NODE_ENV == "production";
 const config = {
   entry: "./src/index.ts",
   output: {
+    hashFunction: 'sha256',
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
