@@ -23,6 +23,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@arction/lcjs": "^3.4.0"
+    "@arction/lcjs": "^4.0.0"
   }
 }
