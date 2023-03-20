@@ -1,22 +1,28 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
   entry: "./src/index.ts",
   output: {
-    hashFunction: 'sha256',
+    hashFunction: "sha256",
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, "dist"),
     compress: true,
     host: "localhost",
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "lcjs-typescript-example",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "node_modules/@arction/lcjs/dist/resources", to: "resources" },
+      ],
     }),
   ],
   module: {
