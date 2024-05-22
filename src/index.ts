@@ -1,4 +1,4 @@
-import { lightningChart, SolidLine } from "@arction/lcjs";
+import { lightningChart, SolidLine } from "@lightningChart/lcjs";
 
 const lc = lightningChart({
   // Get your license key from https://lightningchart.com/js-charts/

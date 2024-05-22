@@ -21,7 +21,10 @@ const config = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "node_modules/@arction/lcjs/dist/resources", to: "resources" },
+        {
+          from: "node_modules/@lightningchart/lcjs/dist/resources",
+          to: "resources",
+        },
       ],
     }),
   ],
