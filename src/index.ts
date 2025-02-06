@@ -1,4 +1,4 @@
-import { lightningChart, SolidLine } from "@lightningchart/lcjs";
+import { emptyFill, lightningChart } from "@lightningchart/lcjs";
 
 const lc = lightningChart({
   // Get your license key from https://lightningchart.com/js-charts/
@@ -9,11 +9,11 @@ const chart = lc.ChartXY();
 
 chart.setTitle("Getting Started");
 
-const lineSeries = chart.addLineSeries();
+const lineSeries = chart
+  .addPointLineAreaSeries({ dataPattern: "ProgressiveX" })
+  .setAreaFillStyle(emptyFill);
 
-lineSeries.setStrokeStyle((stroke) => stroke.setThickness(5));
-
-lineSeries.add([
+lineSeries.appendJSON([
   { x: 0, y: 0 },
   { x: 1, y: 7 },
   { x: 2, y: 3 },
